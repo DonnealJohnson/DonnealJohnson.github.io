@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #f4f4f9, #e7e9fc);
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #4CAF50, #00bcd4);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffe082;
+        }
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(to right, #00bcd4, #4CAF50);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero a {
+            text-decoration: none;
+            background: linear-gradient(to right, #4CAF50, #00bcd4);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .hero a:hover {
+            transform: scale(1.1);
+        }
+        section {
+            padding: 5rem 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        #spacing{
+            line-height: 2;
+            font-size: 25px;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #00bcd4;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        .project {
+            background: linear-gradient(to right, #ffffff, #e7f7fe);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .project h3 {
+            margin: 1rem 0;
+            color: #333;
+        }
+        .project p {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background: linear-gradient(to right, #4CAF50, #00bcd4);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .github-btn {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(to right, #4CAF50, #00bcd4);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-top: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .github-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donneal Johnson</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Hi, I'm a Front-End Developer</h2>
+        <p>Building modern, responsive websites with a focus on clean code, seamless design, and user-friendly experiences.</p>
+        <p>Aspiring to expand my skills into Full-Stack Developer, constantly learning and growing in the tech world.</p>
+        <a href="#projects">Explore My Work</a>
+    </section>
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <p id ="spacing">I'm a frontend developer with a strong foundation in HTML, CSS, JavaScript, and React, along with experience using Bootstrap to create responsive, user-friendly designs. My passion lies in crafting clean, functional web interfaces that enhance user experiences.
+
+My journey into web development began during my time as a logistics supervisor in the U.S. Army, where I developed problem-solving skills, attention to detail, and a commitment to delivering results. Now, I’m channeling those strengths into building engaging websites and applications.
+
+Currently, I’m expanding my skills to become a full-stack developer, diving into backend technologies to create seamless, end-to-end web solutions. My goal is to become a well-rounded full-stack developer and contribute to projects that make a meaningful impact.
+
+When I’m not coding, I enjoy watching movies, reading my bible, and spending time with my family. Feel free to check out my projects below or reach out—I’d love to collaborate on exciting new challenges!</p>
+    </section>
+    <section id="projects">
+        <div class="section-title">
+            <h2>Simple Projects</h2>
+        </div>
+        <div class="projects">
+            <div class="project">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/html-programming-5138111-4288267.png" alt="Project 1">
+                <a href="https://donnealjohnson.github.io/better-health-education/"><h3>Nutrition Learning Hub</h3></a>
+                <p>This project is an educational website designed to help you learn the essentials of nutrition through easy-to-follow guilds and tips empowering you to make heathier choices and improve your well-being.</p>
+            </div>
+            <div class="project">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/html-programming-5138111-4288267.png" alt="Project 2">
+                <a href="https://donnealjohnson.github.io/bibleQuizApp/"><h3>Interactive Bible Quiz App</h3></a>
+                <p>An interactive quiz app that lets users test their knowledge, see which answers they got right or wrong, view their final score, and restart the quiz.</p>
+            </div>
+            <div class="project">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/html-programming-5138111-4288267.png" alt="Project 3">
+                <a href="https://donnealjohnson.github.io/toDoListApp/"><h3>To-Do-List App</h3></a>
+                <p>This to-do list app is designed to help users stay organized and manage their tasks efficiently. With a clean, user-friendly interface.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact</h2>
+        </div>
+        <p>Want to collaborate or have any questions? Reach me at <a href="mailto:nealguidance@gmail.com">nealguidance@gmail.com</a>.</p>
+    <a href="https://github.com/DonnealJohnson" target="_blank" class="github-btn">Visit My GitHub Account</a>
+    </section>
+ 
+    
+    
+    <footer>
+        <p>&copy; 2025 Donneal Johnson Portfolio.<a href="#"> Back to top</a></p>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(revealSection, {
+            root: null,
+            threshold: 0.15
+        });
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
+</body>
+</html>
